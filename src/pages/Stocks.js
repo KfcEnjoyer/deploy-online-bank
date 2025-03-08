@@ -13,7 +13,7 @@ const Investments = () => {
                     throw new Error('You must be logged in to view this page.');
                 }
 
-                const response = await axios.get('deploy-server-production-08b1.up.railway.app/api/stocks/top-stocks', {
+                const response = await axios.get('https://deploy-server-production-08b1.up.railway.app/api/stocks/top-stocks', {
                     headers: {
                         Authorization: `Bearer ${token}`, // Attach the token in the header
                     },

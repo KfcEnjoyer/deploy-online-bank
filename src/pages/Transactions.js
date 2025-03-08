@@ -26,13 +26,13 @@ const Transactions = () => {
                 }
 
                 // Get account details
-                const accountResponse = await axios.get(`deploy-server-production-08b1.up.railway.app/accounts/${accountNumber}`, {
+                const accountResponse = await axios.get(`https://deploy-server-production-08b1.up.railway.app/accounts/${accountNumber}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setAccount(accountResponse.data);
 
                 // Get transactions
-                const transactionResponse = await axios.get(`deploy-server-production-08b1.up.railway.app/transactions/${accountNumber}`, {
+                const transactionResponse = await axios.get(`https://deploy-server-production-08b1.up.railway.app/transactions/${accountNumber}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 

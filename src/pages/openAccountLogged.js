@@ -68,7 +68,7 @@ function OpenAccountLogged() {
         setLoading(true);
         console.log("Creating account of type:", accountType);
         
-        axios.post("deploy-server-production-08b1.up.railway.app/openaccount/open", 
+        axios.post("https://deploy-server-production-08b1.up.railway.app/openaccount/open", 
             { accountType }, 
             { headers: { Authorization: `Bearer ${token}` } }
         )

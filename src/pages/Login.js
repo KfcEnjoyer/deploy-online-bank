@@ -26,7 +26,7 @@ function Login() {
         setError("");
         const data = { email, password };
         
-        axios.post("deploy-server-production-08b1.up.railway.app/auth/login", data)
+        axios.post("https://deploy-server-production-08b1.up.railway.app/auth/login", data)
             .then((response) => {
                 if (response.data.error) {
                     setError(response.data.error);

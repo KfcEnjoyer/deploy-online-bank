@@ -74,13 +74,13 @@ function OpenAccount() {
         ...data,
       };
     
-      axios.post("deploy-server-production-08b1.up.railway.app/openaccount/create", formData)
+      axios.post("https://deploy-server-production-08b1.up.railway.app/openaccount/create", formData)
         .then((response) => {
           const token = response.data.token;
           localStorage.setItem("token", token);
     
           return axios.post(
-            "deploy-server-production-08b1.up.railway.app/openaccount/open",
+            "https://deploy-server-production-08b1.up.railway.app/openaccount/open",
             { accountType: selectedAccount },
             { headers: { Authorization: `Bearer ${token}` } }
           );

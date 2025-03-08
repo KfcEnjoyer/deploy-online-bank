@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
 
             if (token) {
                 try {
-                    const response = await axios.get('deploy-server-production-08b1.up.railway.app/profile', {
+                    const response = await axios.get('https://deploy-server-production-08b1.up.railway.app/profile', {
                         headers: {
                             Authorization: `Bearer ${token}`,
                         },

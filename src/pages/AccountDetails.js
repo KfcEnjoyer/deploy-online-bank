@@ -23,7 +23,7 @@ const AccountDetails = () => {
                 }
 
                 setLoading(true);
-                const response = await axios.get(`deploy-server-production-08b1.up.railway.app/accounts/${accountNumber}`, {
+                const response = await axios.get(`https://deploy-server-production-08b1.up.railway.app/accounts/${accountNumber}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
