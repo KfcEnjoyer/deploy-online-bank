@@ -11,7 +11,10 @@ function OpenAccount() {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [formStep, setFormStep] = useState(1);
   const nav = useNavigate();
-
+  fetch('https://deploy-server-production-08b1.up.railway.app/test')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
   const handleCardClick = (type) => {
     setSelectedAccount(type);
     setIsFormVisible(true);
