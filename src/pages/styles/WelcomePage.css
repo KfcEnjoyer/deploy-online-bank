@@ -721,107 +721,193 @@ main {
     }
   }
   
-  @media (max-width: 992px) {
-    .footer-content {
-      flex-direction: row;
-      justify-content: flex-start;
-    }
-    
-    .footer-section {
-      flex: 0 0 50%;
-      padding-right: 1.5rem;
-    }
+  /* Mobile Responsiveness Fixes for AL.bank */
+
+/* Better responsive breakpoints */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
   }
   
-  @media (max-width: 768px) {
-    .mobile-menu-toggle {
-      display: flex;
-    }
-  
-    .nav-links {
-      display: flex;
-      position: fixed;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      flex-direction: column;
-      background-color: white;
-      padding: 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transform: translateY(-100%);
-      opacity: 0;
-      pointer-events: none;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      z-index: 100;
-    }
-  
-    .nav-links.active {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-  
-    .nav-links a {
-      padding: 1rem 1.5rem;
-      width: 100%;
-      text-align: center;
-      border-bottom: 1px solid #f3f4f6;
-    }
-  
-    .nav-links a:last-child {
-      border-bottom: none;
-    }
-  
-    .nav-links .logout-button {
-      margin: 1rem;
-      display: inline-block;
-      width: calc(100% - 2rem);
-      text-align: center;
-      border-radius: 6px;
-      justify-content: center;
-    }
-  
-    .welcome-section h1 {
-      font-size: 2rem;
-    }
-  
-    .account-balance {
-      font-size: 1.5rem;
-    }
-    
-    .footer-bottom-content {
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    .footer-bottom-links {
-      justify-content: center;
-    }
+  .hero-content, .hero-image {
+    flex: 1 0 100%;
   }
   
-  @media (max-width: 576px) {
-    .footer-section {
-      flex: 0 0 100%;
-      padding-right: 0;
-    }
-    
-    .footer-bottom-links {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
+  .features-container {
+    flex-wrap: wrap;
   }
   
-  @media (max-width: 480px) {
-    .welcome-section h1 {
-      font-size: 1.75rem;
-    }
-  
-    .accounts-grid, .actions-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .account-card, .action-card {
-      padding: 1.5rem;
-    }
+  .feature-card {
+    flex: 1 0 calc(50% - 2rem);
+    margin-bottom: 2rem;
   }
+}
+
+@media (max-width: 768px) {
+  /* Improved navigation for mobile */
+  .nav-links.active {
+    display: flex !important;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+    top: 70px;  /* Ensure this matches your header height */
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+  
+  /* Improve hero section on mobile */
+  .hero-content h1 {
+    font-size: 2.25rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .hero-buttons .primary-button,
+  .hero-buttons .secondary-button {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Improve feature cards on mobile */
+  .feature-card {
+    flex: 1 0 100%;
+  }
+  
+  /* Fix account cards on mobile */
+  .accounts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Improve testimonials display */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Smaller screens adjustments */
+  .header-content {
+    padding: 0 1rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+  
+  .section-header h2,
+  .features-section h2,
+  .testimonials-section h2,
+  .cta-content h2 {
+    font-size: 1.75rem;
+  }
+  
+  /* Fix paddings for content sections */
+  .features-section,
+  .accounts-section,
+  .testimonials-section,
+  .cta-section {
+    padding: 3rem 1rem;
+  }
+  
+  /* Adjust card padding for better mobile view */
+  .account-card,
+  .testimonial-card,
+  .feature-card {
+    padding: 1.5rem;
+  }
+  
+  /* Make sure buttons are properly sized on small screens */
+  .account-button,
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Fix footer layout */
+  .footer-content {
+    padding: 2rem 1rem 1rem;
+  }
+}
+
+/* Fix for the login/register buttons */
+@media (max-width: 768px) {
+  .login-button, .register-button {
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+  
+  /* Fix for mobile menu toggle button */
+  .mobile-menu-toggle {
+    margin-right: 0.5rem;
+  }
+}
+
+/* Additional fixes for specific issues in Image 2 */
+@media (max-width: 480px) {
+  /* Adjust the hero container */
+  .hero-section {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  /* Fix button container in image 2 */
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  .hero-buttons a,
+  .hero-buttons button {
+    flex: 0 0 auto;
+    min-width: 120px;
+  }
+  
+  /* Fix the "Why Choose" section */
+  .features-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  /* Add proper spacing between sections */
+  .section-header {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Fix for the quick links section seen in Image 1 */
+@media (max-width: 480px) {
+  .quick-links, .our-services, .contact-us {
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  
+  .quick-links a,
+  .our-services a {
+    display: inline-block;
+    margin: 0.5rem;
+  }
+  
+  .footer-bottom {
+    padding: 1rem;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
