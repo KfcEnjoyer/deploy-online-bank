@@ -3,7 +3,7 @@ import { useAuth } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const axiosInstance = axios.create({
-    baseURL: "http://127.0.0.1:3001", // Your API base URL
+    baseURL: "deploy-server-production-08b1.up.railway.app", // Your API base URL
 });
 
 axiosInstance.interceptors.request.use(

@@ -25,12 +25,12 @@ const Transfers = () => {
                     throw new Error('No token found');
                 }
 
-                const accountResponse = await axios.get(`http://127.0.0.1:3001/accounts/${accountNumber}`, {
+                const accountResponse = await axios.get(`deploy-server-production-08b1.up.railway.app/accounts/${accountNumber}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setAccount(accountResponse.data);
 
-                const transferResponse = await axios.get(`http://127.0.0.1:3001/transactions/transfers/${accountNumber}`, {
+                const transferResponse = await axios.get(`deploy-server-production-08b1.up.railway.app/transactions/transfers/${accountNumber}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 
